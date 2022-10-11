@@ -1,3 +1,16 @@
+# Redux with vanila JavaScript
+
+In this repository we will learn how to implement redux with vanila JavaScript.
+
+
+## Documentation
+
+- Create Store 
+- Initial state
+- Action Function 
+-  Reducer Function
+- dispatch action 
+- bind action with bindActionCreators
 
 ## How to create a store
 
