@@ -60,3 +60,17 @@ store.dispatch(orderCake());
 store.dispatch(orderCake());
 unsubscribe()
 ```
+
+## How to bind action with bindActionCreators
+```javascript
+// import bindActionCreators . type this at the top of the page
+const bindActionCreators = redux.bindActionCreators;
+
+//  now follow this code block for bind action // binding actions
+const action = bindActionCreators({ orderCake, restockCake }, store.dispatch)
+
+// for output
+action.orderCake();
+action.orderCake();
+action.restockCake(2);
+```
