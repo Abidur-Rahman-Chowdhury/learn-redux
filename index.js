@@ -2,7 +2,7 @@ const redux = require('redux');
 
 const createStore =redux.createStore
 
-
+// setting action type
 const CAKE_ORDERED = 'CAKE_ORDERED';
 
 

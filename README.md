@@ -18,6 +18,8 @@ const initialState = {
 
 ## How to create  Action Function 
 ```javascript
+// setting action type
+const CAKE_ORDERED = 'CAKE_ORDERED';
 // action of redux which return a object 
 function orderCake() {
   return {
