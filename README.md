@@ -13,6 +13,7 @@ In this repository we will learn how to implement redux with vanila JavaScript.
 - bind action with bindActionCreators
 - combine reducer with combineReducers
 - update nested state using immer library
+- How to use middleware in redux with redux-logger to see the result of state after dispatch action
 
 ## How to create a store
 
@@ -288,4 +289,21 @@ const unsubscribe = store.subscribe(() => {
 store.dispatch(updateStreet('456 Main St'))
 
 unsubscribe()
+```
+
+
+## How to use middleware also learn how to use redux-logger 
+
+```javascript
+// to use middleware need middleware function
+
+const applyMiddleware = redux.applyMiddleware;
+
+// applying middleware import redux logger and create logger 
+
+const reduxLogger = require('redux-logger');
+const logger = reduxLogger.createLogger()
+
+// passing middle ware function into store and pass logger as parameter 
+const store = createStore(rootReducer, applyMiddleware(logger));
 ```

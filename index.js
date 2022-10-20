@@ -1,6 +1,16 @@
 const redux = require('redux');
 const createStore = redux.createStore;
 const bindActionCreators = redux.bindActionCreators;
+// to use middleware need middleware function
+
+const applyMiddleware = redux.applyMiddleware;
+
+
+// applying middleware import redux logger and create logger 
+
+
+const reduxLogger = require('redux-logger');
+const logger = reduxLogger.createLogger()
 
 // combine reducer
 
@@ -100,12 +110,12 @@ const rootReducer = combineReducers({
   cake: cakeReducer,
   iceCream: iceCreamReducer,
 })
-
-const store = createStore(rootReducer);
+// passing middle ware function into store and pass logger as parameter 
+const store = createStore(rootReducer, applyMiddleware(logger));
 
 console.log('Initial state', store.getState())
 
-const unsubscribe =store.subscribe(() => console.log('update state', store.getState()))
+const unsubscribe = store.subscribe(() => {})
 
 // store.dispatch(orderCake());
 // store.dispatch(orderCake());
